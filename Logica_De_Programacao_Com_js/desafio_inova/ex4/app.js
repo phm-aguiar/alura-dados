@@ -3,6 +3,7 @@ Imagine que o seu irmão esteja aprendendo programação e o professor lhe solic
 Como seria a implementação desse algoritmo para que ele possa apresentá-lo ao seu professor?
 */
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 10; i++) 
+{
 	console.log(i)
 }
