@@ -2,6 +2,7 @@ let numeroSecreto = gerarNumeroAleatorio();
 function exibir_texto_na_tela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', { rate: 1.0 });
 }
 
 function limpar_campo() {

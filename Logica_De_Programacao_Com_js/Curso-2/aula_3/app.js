@@ -1,5 +1,6 @@
 let numeroSecreto = gerarNumeroAleatorio();
 let numeros = [];
+numeros.push(numeroSecreto);
 function exibir_texto_na_tela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
@@ -27,20 +28,12 @@ function verificarChute() {
         exibir_texto_na_tela('p', 'O número secreto é maior');
     }
     limpar_campo();
-    console.log(numeros);
     tentativas++;
+    console.log(numeros);
 }
 
 function gerarNumeroAleatorio() {
-    let numero = parseInt(Math.random() * 50 + 1);
-    if (numeros.length == 50) {
-        numeros = [];
-    }
-    if (numeros.includes(numero)) {
-        return gerarNumeroAleatorio();
-    }
-    numeros.push(numero);
-    return numero;
+    return parseInt(Math.random() * 50 + 1);
 }
 
 function exibir_mensagem_inicio(titulo, mensagem) {
@@ -54,11 +47,14 @@ let titulo = 'Jogo do número secreto';
 exibir_mensagem_inicio(titulo, mensagem);
 
 function reiniciar_jogo() {
-    tentativas = 0;
+    tentativas = 1;
     numeroSecreto = gerarNumeroAleatorio();
     document.getElementById('reiniciar').setAttribute('disabled', 'disabled');
     document.getElementById('new').setAttribute('enabled', 'enabled');
     limpar_campo();
     exibir_mensagem_inicio(titulo, mensagem);
-
+    if (numeroSecreto in numeros) {
+        numeroSecreto = gerarNumeroAleatorio();
+    }
+    numeros.push(numeroSecreto);
 }
