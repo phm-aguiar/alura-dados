@@ -19,7 +19,6 @@ function verificarChute() {
         exibir_texto_na_tela('h1', 'Parabéns!');
         exibir_texto_na_tela('p', 'Você acertou o número secreto em ' + tentativas + msg_tentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
-        document.getElementById('new').removeAttribute('enabled');
         return;
     }
     else if (chute > numeroSecreto) {
@@ -36,7 +35,7 @@ function verificarChute() {
 function gerarNumeroAleatorio() {
     let numero = parseInt(Math.random() * 50 + 1);
     if (numeros.length >= 50) {
-        numeros = []; // Reinicia o array apenas quando atingir 50 números
+        numeros = [];
     }
     if (numeros.includes(numero)) {
         return gerarNumeroAleatorio();
@@ -60,7 +59,6 @@ function reiniciar_jogo() {
     tentativas = 1;
     numeroSecreto = gerarNumeroAleatorio();
     document.getElementById('reiniciar').setAttribute('disabled', 'disabled');
-    document.getElementById('new').setAttribute('enabled', 'enabled');
     limpar_campo();
     exibir_mensagem_inicio(titulo, mensagem);
     if (numeroSecreto in numeros) {
