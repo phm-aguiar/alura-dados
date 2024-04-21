@@ -1,0 +1,154 @@
+comandos uteis no git
+
+comitar apenas um arquivo
+
+git commit -S -m "mensagem" nome_do_arquivo
+
+comitar todos os arquivos
+
+git commit -S -m "mensagem" -a
+
+comitar todos os arquivos com mensagem
+
+git commit -S -m "mensagem"
+
+ver commits
+
+git log
+
+ver commits de um arquivo
+
+git log nome_do_arquivo
+
+ver commits de um arquivo com diff
+
+git log -p nome_do_arquivo
+
+ver commits de um arquivo com diff e estatisticas
+
+git log --stat nome_do_arquivo
+
+ver commits em uma linha
+
+git log --oneline
+
+restaurar um arquivo para o estado do ultimo commit
+
+git checkout -- nome_do_arquivo
+ou
+git restore nome_do_arquivo
+
+restaurar arquvo para determinado commit
+
+git restore --source=commit_hash nome_do_arquivo
+
+restaurar todos os arquivos para o estado do ultimo commit
+
+git checkout -- .
+ou
+git restore .
+
+restaurar todos os arquivos para o estado de um determinado commit
+
+git restore --source=commit_hash .
+ou
+git checkout commit_hash -- .
+
+ver diferença entre dois commits
+
+git diff commit_hash1 commit_hash2
+
+ver diferença entre dois commits de um arquivo
+
+git diff commit_hash1 commit_hash2 nome_do_arquivo
+
+ver diferença entre dois commits de um arquivo com estatisticas
+
+git diff --stat commit_hash1 commit_hash2 nome_do_arquivo
+
+resolver conflitos de merge
+
+git mergetool
+
+verificar status do git
+
+git status
+
+verificar status do git de forma resumida
+
+git status -s
+
+verificar status do git de forma resumida e com branch
+
+git status -sb
+
+verificar status do git de forma resumida e com branch e com arquivos ignorados
+
+git status -sb --ignored
+
+trocar de branch
+
+git checkout nome_da_branch
+
+criar branch
+
+git checkout -b nome_da_branch
+
+deletar branch
+
+git branch -d nome_da_branch
+
+mandar a branch criada localmente para o repositorio remoto
+
+git push origin nome_da_branch
+ou
+git push --set-upstream origin nome_da_branch
+
+mandar a branch criada localmente para o repositorio remoto e criar pull request
+
+git push origin nome_da_branch -u
+
+ver branches
+
+git branch
+
+ver branches com detalhes
+
+git branch -v
+
+trazer branch do repositorio remoto
+
+git fetch origin nome_da_branch
+
+trazer todas as branches do repositorio remoto
+
+git fetch origin
+ou
+git fetch --all
+
+git clone <url>: 
+Clona um repositório remoto para a sua máquina local.
+git pull: 
+Atualiza o seu repositório local para o último commit do repositório remoto.
+git add .: 
+Adiciona todos os arquivos modificados ao índice do Git para o próximo commit.
+git stash: 
+Salva as mudanças que ainda não foram commitadas para uso posterior.
+git stash pop: 
+Aplica as mudanças salvas pelo último comando git stash.
+git rebase <branch>: 
+Aplica os commits da sua branch atual em cima da branch especificada.
+git tag: 
+Lista todas as tags do repositório.
+git tag <tagname>: 
+Cria uma nova tag com o nome especificado.
+git push origin --tags: 
+Envia todas as tags locais para o repositório remoto.
+git revert <commit>: 
+Cria um novo commit que desfaz as mudanças feitas no commit especificado.
+git reset --hard <commit>: 
+Restaura o repositório para o estado do commit especificado, descartando todos os commits feitos após ele.
+git bisect: 
+Utilizado para encontrar o commit que introduziu um bug através de uma busca binária.
+git cherry-pick <commit>: 
+Aplica as mudanças de um commit específico à branch atual.
